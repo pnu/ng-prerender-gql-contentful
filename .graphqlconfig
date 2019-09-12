@@ -1,0 +1,8 @@
+{
+  "schemaPath": "schema.graphql",
+  "extensions": {
+    "endpoints": {
+      "default": "https://graphql.contentful.com/content/v1/spaces/bswbys9qvg7q?access_token=0AC3sRBQaFKYMFE49zQrcgVYe-aXpOw4dlB8gcpiYBE"
+    }
+  }
+}
