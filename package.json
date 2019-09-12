@@ -4,7 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build-server": "ng run frc-pnu:server",
+    "build-browser": "ng build --prod",
+    "build-prerender": "yarn angular-prerender",
+    "build": "yarn build-server && yarn build-browser && yarn build-prerender",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
