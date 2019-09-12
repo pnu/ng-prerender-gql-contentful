@@ -6,8 +6,8 @@ import {InMemoryCache} from 'apollo-cache-inmemory';
 const uri = 'https://graphql.contentful.com/content/v1/spaces/bswbys9qvg7q?access_token=0AC3sRBQaFKYMFE49zQrcgVYe-aXpOw4dlB8gcpiYBE'; // <-- add the URL of the GraphQL server here
 export function createApollo(httpLink: HttpLink) {
   return {
-    link: httpLink.create({uri}),
-    cache: new InMemoryCache(),
+    link: httpLink.create({uri, method: 'GET'}),
+    cache: new InMemoryCache()
   };
 }
 
