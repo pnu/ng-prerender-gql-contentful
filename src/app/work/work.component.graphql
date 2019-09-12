@@ -1,0 +1,9 @@
+query Products {
+  productCollection {
+    items {
+      productName
+      productDescription
+      price
+    }
+  }
+}
