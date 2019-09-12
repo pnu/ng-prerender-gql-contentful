@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductsGQL, Product } from '../../generated/graphql';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-work',
@@ -6,8 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./work.component.css']
 })
 export class WorkComponent implements OnInit {
+  products$: Observable<Partial<Product>[]>;
 
-  constructor() { }
+  constructor(private productService: ProductsGQL) {
+    this.products$ = productService.fetch().pipe(
+      map(res => res.data.productCollection.items)
+    );
+  }
 
   ngOnInit() {
   }
